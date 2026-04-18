@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 active:scale-[0.97]",
   {
     variants: {
       variant: {
@@ -13,13 +13,23 @@ const buttonVariants = cva(
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+        ghost: "hover:bg-accent/20 hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        glass:
+          "glass text-foreground hover:bg-[hsl(var(--glass-bg-strong))] hover:border-[hsl(var(--glass-highlight))]",
+        primary:
+          "bg-gradient-to-br from-primary to-[hsl(var(--primary-glow))] text-primary-foreground shadow-[var(--shadow-glow-primary)] hover:brightness-110",
+        accent:
+          "bg-gradient-to-br from-accent to-[hsl(28_95%_65%)] text-accent-foreground hover:brightness-110",
+        emergency:
+          "bg-gradient-to-br from-destructive to-[hsl(var(--destructive-glow))] text-destructive-foreground shadow-[var(--shadow-glow-emergency)] hover:brightness-110 font-semibold",
+        "destructive-outline":
+          "border border-destructive/40 bg-destructive/10 text-destructive hover:bg-destructive/20",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        sm: "h-9 rounded-lg px-3",
+        lg: "h-11 rounded-xl px-6",
         icon: "h-10 w-10",
       },
     },
