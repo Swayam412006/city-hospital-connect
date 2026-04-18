@@ -44,7 +44,7 @@
     --warning: 32 95% 60%;
     --warning-foreground: 219 60% 10%;
 
-    --border: 210 60% 90% / 0.12;
+    --border: 210 40% 80%;
     --input: 219 40% 18%;
     --ring: 199 95% 60%;
 
@@ -78,7 +78,7 @@
 }
 
 @layer base {
-  * { @apply border-border; }
+  * { border-color: hsl(var(--border) / 0.12); }
   html, body, #root { height: 100%; }
   body {
     @apply text-foreground font-body antialiased;
