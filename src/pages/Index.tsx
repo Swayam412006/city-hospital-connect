@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Bed, Ambulance, HeartPulse, Users, Wifi, ExternalLink } from "lucide-react";
+import { Bed, Ambulance, HeartPulse, Users, Wifi, ExternalLink, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Toaster } from "@/components/ui/sonner";
 import { toast } from "sonner";
 import HospitalHeader from "@/components/hospital/HospitalHeader";
@@ -126,8 +127,10 @@ const Index = () => {
                 <ExternalLink className="w-4 h-4" /> Open EpiGuard
               </a>
             </Button>
-            <Button variant="glass" size="lg">
-              View Protocols
+            <Button variant="glass" size="lg" asChild>
+              <Link to="/gov-hospitals">
+                <MapPin className="w-4 h-4" /> Gov. Hospitals
+              </Link>
             </Button>
           </div>
         </motion.section>
